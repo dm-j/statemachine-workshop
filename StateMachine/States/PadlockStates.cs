@@ -3,13 +3,13 @@ using StateMachine.WorkshopSM;
 
 namespace StateMachine.WorkshopStateMachine
 {
-    public abstract class LockState : BaseState<int>
+    public abstract class PadlockState : BaseState<int>
     {
-        public LockState(Door door)
+        public PadlockState(Door door)
             : base(door) { }
     }
 
-    public class Locked : LockState
+    public class Locked : PadlockState
     {
         public override int ID => 11;
 
@@ -20,7 +20,7 @@ namespace StateMachine.WorkshopStateMachine
         }
     }
 
-    public class Unlocked : LockState
+    public class Unlocked : PadlockState
     {
         public override int ID => 22;
 
