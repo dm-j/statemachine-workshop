@@ -19,6 +19,12 @@ namespace StateMachine.WorkshopSM
         public DoorState DoorState => 
             State<DoorState>().Single();
 
+        public void Open() =>
+            Broadcast(Event.Open);
+
+        public void Close() =>
+            Broadcast(Event.Close);
+
         public void WalkThrough() =>
             DoorState.WalkThrough();
     }
