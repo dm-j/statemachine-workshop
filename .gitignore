@@ -1,0 +1,72 @@
+# Ignore everything
+*
+
+# Whitelist top level folders
+!*/
+
+# Whitelist .gitignore specifically
+!.gitignore
+
+# Whitelist file types
+!*.cs
+!*.nuspec
+!*.csproj
+!*.sqlproj
+!*.sln
+!*.config
+!*.js
+!*.css
+!*.sass
+!*.txt
+!*.md
+!*.json
+!*.defaults
+!*.config
+!*.cshtml
+!*.datasource
+!*.pubxml
+!*.disco
+!*.wsdl
+!*.xsd
+!*.svcinfo
+!*.svcmap
+!*.map
+!*.scss
+!*.html
+!*.sql
+!*.dtsx
+!*.dtproj
+!*.database
+!*.ds
+!*.rsd
+!*.rds
+!*.rdl
+!*.rpt
+!*.rptproj
+!*.ascx
+!*.aspx
+!*.asax
+!*.Master
+!*.snk
+
+
+# Non-text, but still important files
+!*.ico
+!*.png
+!*.svg
+!*.woff
+!*.eot
+!*.ttf
+!*.woff2
+!*.otf
+!*.pdf
+!*.gif
+!*.swf
+
+# Reblacklist obj, .vs, packages, bin folders
+**/obj/*
+.vs
+**/packages/*
+*/bin/*
+
+TemporaryGeneratedFile*.cs
