@@ -7,7 +7,7 @@ namespace StateMachine
     /// <summary>
     /// This class is the thing that is responsible for persisting state changes to the database. In this case, it's just a dummy because
     /// we're not actually saving anything to the database. Ordinarily this would be a specialized DAL or similar object.
-    /// Instead, it outputs a text snippet to the console. 
+    /// Instead, it outputs a text snippet to Standard Output. 
     /// </summary>
     public class DummySaver : ISaveState<int>
     {
