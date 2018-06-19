@@ -47,9 +47,11 @@
   <ItemGroup>
     <Compile Include="Boilerplate\DummySaver.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="WorkshopStateMachine\StateMachines.cs" />
-    <Compile Include="WorkshopStateMachine\States.cs" />
-    <Compile Include="WorkshopStateMachine\Events.cs" />
+    <Compile Include="WorkshopStateMachine\StateMachines\HandleStateMachine.cs" />
+    <Compile Include="WorkshopStateMachine\States\LockStates.cs" />
+    <Compile Include="WorkshopStateMachine\StateMachines\DoorStateMachine.cs" />
+    <Compile Include="WorkshopStateMachine\States\DoorStates.cs" />
+    <Compile Include="WorkshopStateMachine\Events\Events.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

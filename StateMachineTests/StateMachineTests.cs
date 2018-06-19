@@ -4,12 +4,29 @@ using StateMachine.WorkshopSM;
 namespace StateMachineTests
 {
     [TestClass]
-    public class UnitTest1
+    public class StateMachineTests
     {
+        [TestMethod]
+        public void WalkThroughOpenDoor()
+        {
+            Door door = new Door(1, "test");
+            door.AddState<Open>();
+            door.WalkThrough();
+        }
+
+        [TestMethod]
+        public void WalkThroughClosedDoor()
+        {
+            Door door = new Door(1, "test");
+            door.AddState<Closed>();
+            door.WalkThrough();
+        }
+
+
         [TestMethod]
         public void OpenAClosedDoor()
         {
-            Door door = new Door(1, "A user");
+            Door door = new Door(1, "test");
             door.AddState<Closed>();
             door.Open();
 
@@ -19,7 +36,7 @@ namespace StateMachineTests
         [TestMethod]
         public void CloseAnOpenDoor()
         {
-            Door door = new Door(1, "A user");
+            Door door = new Door(1, "test");
             door.AddState<Open>();
             door.Close();
 
@@ -29,7 +46,7 @@ namespace StateMachineTests
         [TestMethod]
         public void CloseAClosedDoor()
         {
-            Door door = new Door(1, "A user");
+            Door door = new Door(1, "test");
             door.AddState <Closed>();
             door.Close();
 
@@ -39,7 +56,7 @@ namespace StateMachineTests
         [TestMethod]
         public void OpenAnOpenedDoor()
         {
-            Door door = new Door(1, "A user");
+            Door door = new Door(1, "test");
             door.AddState<Open>();
             door.Open();
 

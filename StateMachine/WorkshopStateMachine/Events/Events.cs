@@ -4,6 +4,8 @@
     {
         // Your events go here.
         Close,
-        Open
+        Open,
+        Unlock,
+        Lock
     }
 }
