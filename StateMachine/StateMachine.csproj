@@ -48,7 +48,7 @@
     <Compile Include="Boilerplate\DummySaver.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="StateMachines\Handle.cs" />
-    <Compile Include="States\LockStates.cs" />
+    <Compile Include="States\PadlockStates.cs" />
     <Compile Include="StateMachines\Door.cs" />
     <Compile Include="States\DoorStates.cs" />
     <Compile Include="Events\Events.cs" />
@@ -58,7 +58,7 @@
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Dots.Standard.StateMachine">
-      <Version>1.0.7500</Version>
+      <Version>1.0.7500.1</Version>
     </PackageReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

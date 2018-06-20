@@ -39,7 +39,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Dots.Standard.StateMachine, Version=1.0.7500.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Dots.Standard.StateMachine.1.0.7500\lib\net461\Dots.Standard.StateMachine.dll</HintPath>
+      <HintPath>..\packages\Dots.Standard.StateMachine.1.0.7500.1\lib\net461\Dots.Standard.StateMachine.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.VisualStudio.TestPlatform.TestFramework, Version=14.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
       <HintPath>..\packages\MSTest.TestFramework.1.2.1\lib\net45\Microsoft.VisualStudio.TestPlatform.TestFramework.dll</HintPath>

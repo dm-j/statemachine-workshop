@@ -11,7 +11,9 @@ namespace StateMachine
     /// </summary>
     public class DummySaver : ISaveState<int>
     {
-        public void Save(int recordID, BaseState<int> oldState, BaseState<int> newState, string user) =>
-            Console.WriteLine($"State Transition. Record {recordID} has transitioned from {oldState.GetType()} to {newState.GetType()} initiated by {user}");
+        public void Save(SM<int> record, BaseState<int> oldState, BaseState<int> newState, string user)
+        {
+            Console.WriteLine($"State Transition has occurred. {record.GetType().Name} {record.ID} has transitioned from {oldState.GetType().Name} to {newState.GetType().Name}, initiated by user \"{user}\"");
+        }
     }
 }
