@@ -9,16 +9,14 @@ namespace StateMachineTests
         [TestMethod]
         public void WalkThroughOpenDoor()
         {
-            Door door = new Door(1, "test");
-            door.AddState<Open>();
+            Door door = new Door(1, "test").AddState<Open>() as Door;
             door.WalkThrough();
         }
 
         [TestMethod]
         public void WalkThroughClosedDoor()
         {
-            Door door = new Door(1, "test");
-            door.AddState<Closed>();
+            Door door = new Door(1, "test").AddState<Closed>() as Door;
             door.WalkThrough();
         }
 
@@ -26,8 +24,7 @@ namespace StateMachineTests
         [TestMethod]
         public void OpenAClosedDoor()
         {
-            Door door = new Door(1, "test");
-            door.AddState<Closed>();
+            Door door = new Door(1, "test").AddState<Closed>() as Door;
             door.Open();
 
             Assert.IsTrue(door.DoorState is Open);
@@ -36,8 +33,7 @@ namespace StateMachineTests
         [TestMethod]
         public void CloseAnOpenDoor()
         {
-            Door door = new Door(1, "test");
-            door.AddState<Open>();
+            Door door = new Door(1, "test").AddState<Open>() as Door;
             door.Close();
 
             Assert.IsTrue(door.DoorState is Closed);
@@ -46,8 +42,7 @@ namespace StateMachineTests
         [TestMethod]
         public void CloseAClosedDoor()
         {
-            Door door = new Door(1, "test");
-            door.AddState <Closed>();
+            Door door = new Door(1, "test").AddState<Closed>() as Door;
             door.Close();
 
             Assert.IsTrue(door.DoorState is Closed);
@@ -56,11 +51,22 @@ namespace StateMachineTests
         [TestMethod]
         public void OpenAnOpenedDoor()
         {
-            Door door = new Door(1, "test");
-            door.AddState<Open>();
+            Door door = new Door(1, "test").AddState<Open>() as Door;
             door.Open();
 
             Assert.IsTrue(door.DoorState is Open);
+        }
+
+        [TestMethod]
+        public void WalkThroughClosedThenOpen()
+        {
+            Door door = new Door(1, "test").AddState<Closed>() as Door;
+
+            door.WalkThrough();
+
+            door.Open();
+
+            door.WalkThrough();
         }
     }
 }

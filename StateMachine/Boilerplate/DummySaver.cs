@@ -13,7 +13,7 @@ namespace StateMachine
     {
         public void Save(SM<int> record, BaseState<int> oldState, BaseState<int> newState, string user)
         {
-            Console.WriteLine($"State Transition has occurred. {record.GetType().Name} {record.ID} has transitioned from {oldState.GetType().Name} to {newState.GetType().Name}, initiated by user \"{user}\"");
+            Console.WriteLine($"{record.GetType().Name} {record.ID} has transitioned from {oldState.GetType().Name} to {newState.GetType().Name}, initiated by user \"{user}\"");
         }
     }
 }
