@@ -5,8 +5,6 @@
         // Your events go here.
         Close,
         Open,
-        Unlock,
-        Lock,
         DoorHasOpened
     }
 }

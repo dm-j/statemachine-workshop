@@ -1,15 +1,14 @@
 ﻿using Dots.Standard.StateMachine.State;
-using StateMachine.WorkshopSM;
 
-namespace StateMachine.WorkshopStateMachine
+namespace StateMachine.WorkshopSM
 {
     /// <summary>
     /// This is a set of states with no state machine.
     /// The state machine will be added in the workshop.
     /// </summary>
-    public abstract class PadlockState : BaseState<int>
+    public abstract class LockedState : BaseState<int>
     {
-        public PadlockState(Door door)
+        public LockedState(Door door)
             : base(door)
         {
             // Transitions and OnEntry/Exit/Awake go in the 
@@ -19,9 +18,11 @@ namespace StateMachine.WorkshopStateMachine
             // be inherited by _every_ state which inherits
             // from this type
         }
+
+        // Actions
     }
 
-    public class Locked : PadlockState
+    public class Locked : LockedState
     {
         public override int ID => 5462151;
 
@@ -29,7 +30,6 @@ namespace StateMachine.WorkshopStateMachine
             : base(door)
         {
             // Transitions
-            AddTransition<Unlocked>(Event.Unlock);
 
             // OnEntry
 
@@ -39,7 +39,7 @@ namespace StateMachine.WorkshopStateMachine
         }
     }
 
-    public class Unlocked : PadlockState
+    public class Unlocked : LockedState
     {
         public override int ID => 1116131;
 
@@ -47,7 +47,6 @@ namespace StateMachine.WorkshopStateMachine
             : base(door)
         {
             // Transitions
-            AddTransition<Locked>(Event.Lock);
 
             // OnEntry
 

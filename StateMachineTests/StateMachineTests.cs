@@ -29,7 +29,7 @@ namespace StateMachineTests
         {
             door.AddState<Open>();
 
-            Assert.IsTrue(door.DoorState is Open);
+            Assert.IsTrue(door.Position is Open);
         }
 
         [TestMethod]
@@ -37,7 +37,7 @@ namespace StateMachineTests
         {
             door.AddState<Closed>();
 
-            Assert.IsTrue(door.DoorState is Closed);
+            Assert.IsTrue(door.Position is Closed);
         }
 
         [TestMethod]
@@ -47,7 +47,7 @@ namespace StateMachineTests
 
             door.Open();
 
-            Assert.IsTrue(door.DoorState is Open);
+            Assert.IsTrue(door.Position is Open);
         }
 
         [TestMethod]
@@ -57,7 +57,7 @@ namespace StateMachineTests
 
             door.Close();
 
-            Assert.IsTrue(door.DoorState is Closed);
+            Assert.IsTrue(door.Position is Closed);
         }
 
         [TestMethod]
@@ -67,7 +67,7 @@ namespace StateMachineTests
 
             door.Close();
 
-            Assert.IsTrue(door.DoorState is Closed);
+            Assert.IsTrue(door.Position is Closed);
         }
 
         [TestMethod]
@@ -77,7 +77,7 @@ namespace StateMachineTests
 
             door.Open();
 
-            Assert.IsTrue(door.DoorState is Open);
+            Assert.IsTrue(door.Position is Open);
         }
 
         // Tests without an Assert are considered to pass if they don't throw

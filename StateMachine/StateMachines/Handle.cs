@@ -1,6 +1,6 @@
 ﻿using Dots.Standard.StateMachine.State;
 
-namespace StateMachine.WorkshopStateMachine
+namespace StateMachine.WorkshopSM
 {
     /// <summary>
     /// This is a state machine with no states.
@@ -30,6 +30,8 @@ namespace StateMachine.WorkshopStateMachine
         #endregion Actions
 
         #region Attributes
+
+        // public bool CanOpen => ?
 
         #endregion Attributes
     }

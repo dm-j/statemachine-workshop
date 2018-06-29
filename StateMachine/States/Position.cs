@@ -5,9 +5,12 @@ namespace StateMachine.WorkshopSM
 {
     // Abstract base states group together states of a certain type
 
-    public abstract class DoorState : BaseState<int>
+    public abstract class Position : BaseState<int>
     {
-        public DoorState(Door door)
+        // Each state needs a reference to the state machine
+        // that owns it, so it can communicate with the rest
+        // of the tree.
+        public Position(Door door)
             : base(door)
         {
             // Transitions and OnEntry/Exit/Awake go in the 
@@ -18,12 +21,18 @@ namespace StateMachine.WorkshopSM
             // from this type
         }
 
+        // This is an action the state machine can perform on
+        // behalf of its owning state machine. This can be
+        // abstract, if you want each state to implement it
+        // itself, or you can make it virtual to provide a
+        // default action that individual states could choose
+        // to override
         internal abstract void WalkThrough();
     }
 
     // This is where you put the new door states!
 
-    public class Open : DoorState
+    public class Open : Position
     {
         public override int ID => 651035310;
 
@@ -46,7 +55,7 @@ namespace StateMachine.WorkshopSM
             Console.WriteLine("I walked through.");
     }
 
-    public class Closed : DoorState
+    public class Closed : Position
     {
         public override int ID => 65651321;
 

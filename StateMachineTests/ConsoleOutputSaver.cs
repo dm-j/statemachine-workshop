@@ -12,6 +12,6 @@ namespace StateMachineTests
     public class ConsoleOutputSaver : ISaveState<int>
     {
         public void Save(SM<int> record, BaseState<int> oldState, BaseState<int> newState, string user) =>
-            Console.WriteLine($"{record.GetType().Name} {record.ID} has transitioned from {oldState.GetType().Name} to {newState.GetType().Name}, initiated by user \"{user}\"");
+            Console.WriteLine($"{record.GetType().Name} {record.ID} {oldState.GetType().BaseType.Name} has transitioned from {oldState.GetType().Name} to {newState.GetType().Name}, initiated by user \"{user}\"");
     }
 }

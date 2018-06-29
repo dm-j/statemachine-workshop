@@ -14,14 +14,14 @@ namespace StateMachine.WorkshopSM
         public Door(int ID, ISaveState<int> save, string user)
             : base(ID, save, user) { }
 
-        // Components are all the states the state machine contains.
-        // You access them through a Component, like DoorState.
-        // DoorState does this by filtering out every non-DoorState
-        // state the Door contains.
+        // Components are all the states the state machine contains,
+        // and its neighbor state machines in the hierarchy (parent
+        // and children, although this Door is a root state machine
+        // so it cannot have a parent).
         #region Components
 
-        public DoorState DoorState => 
-            State<DoorState>().Single();
+        internal Position Position => 
+            State<Position>().Single();
 
         #endregion
 
@@ -40,7 +40,7 @@ namespace StateMachine.WorkshopSM
             Broadcast(Event.Close);
 
         public void WalkThrough() =>
-            DoorState.WalkThrough();
+            Position.WalkThrough();
 
         #endregion
 
@@ -48,11 +48,11 @@ namespace StateMachine.WorkshopSM
         // you might care about elsewhere, either in the state machine
         // or in the rest of your code. If you need to check to see if
         // this Door can be walked through (for UI or something) you can
-        // use its CanWalkThrough attribute.
+        // use its IsOpen attribute.
         #region Attributes
 
-        public bool CanWalkThrough => 
-            DoorState is Open;
+        public bool IsOpen => 
+            Position is Open;
 
         #endregion
     }
