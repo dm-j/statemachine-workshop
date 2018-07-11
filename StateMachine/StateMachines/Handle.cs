@@ -13,6 +13,9 @@ namespace StateMachine.WorkshopSM
 
         #region Components
 
+        public Door Door => 
+            Parent<Door>();
+
         #endregion Components
 
         #region Actions
@@ -31,7 +34,7 @@ namespace StateMachine.WorkshopSM
 
         #region Attributes
 
-        // public bool CanOpen => ?
+        // public bool IsTurned => ?
 
         #endregion Attributes
     }

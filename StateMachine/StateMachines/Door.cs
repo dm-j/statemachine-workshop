@@ -29,7 +29,7 @@ namespace StateMachine.WorkshopSM
         // your code. Some actions will be resolved by the state machine
         // itself (such as Open, which broadcasts the Open Event to the
         // entire state hierarchy) or delegated to component states (like
-        // WalkThrough, which is resolved by the DoorState instead of the
+        // WalkThrough, which is resolved by the Door's Position instead of the
         // Door itself.
         #region Actions
 

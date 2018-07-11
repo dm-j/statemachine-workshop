@@ -30,8 +30,6 @@ namespace StateMachine.WorkshopSM
         internal abstract void WalkThrough();
     }
 
-    // This is where you put the new door states!
-
     public class Open : Position
     {
         public override int ID => 651035310;
