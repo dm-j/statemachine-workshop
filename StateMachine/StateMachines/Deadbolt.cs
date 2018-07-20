@@ -3,9 +3,9 @@ using System.Linq;
 
 namespace SM.WorkshopSM
 {
-    public class DoorLock : SM<int>
+    public class Deadbolt : SM<int>
     {
-        public DoorLock(int ID)
+        public Deadbolt(int ID)
             : base(ID) { }
 
         public LockedState Locked =>

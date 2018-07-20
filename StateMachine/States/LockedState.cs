@@ -4,9 +4,9 @@ namespace SM.WorkshopSM
 {
     public abstract class LockedState : BaseState<int>
     {
-        public DoorLock Lock => StateMachine<DoorLock>();
+        public Deadbolt Lock => StateMachine<Deadbolt>();
 
-        public LockedState(DoorLock doorLock)
+        public LockedState(Deadbolt doorLock)
             : base(doorLock)
         { }
     }
@@ -15,7 +15,7 @@ namespace SM.WorkshopSM
     {
         public override int ID => 5462151;
 
-        public Locked(DoorLock doorLock)
+        public Locked(Deadbolt doorLock)
             : base(doorLock)
         {
             AddTransition<Unlocked>(Event.Unlock);
@@ -26,7 +26,7 @@ namespace SM.WorkshopSM
     {
         public override int ID => 1116131;
 
-        public Unlocked(DoorLock doorLock)
+        public Unlocked(Deadbolt doorLock)
             : base(doorLock)
         {
             AddTransition<Locked>(Event.Lock);

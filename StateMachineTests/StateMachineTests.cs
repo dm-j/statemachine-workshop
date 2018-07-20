@@ -28,7 +28,7 @@ namespace StateMachineTests
         public void DoorIsOpen()
         {
             door.AddState<Open>()
-                .AddStateMachine(new DoorLock(2).AddState<Unlocked>());
+                .AddStateMachine(new Deadbolt(2).AddState<Unlocked>());
 
             Assert.IsTrue(door.Position is Open);
         }
@@ -37,7 +37,7 @@ namespace StateMachineTests
         public void DoorIsClosed()
         {
             door.AddState<Closed>()
-                .AddStateMachine(new DoorLock(2).AddState<Unlocked>());
+                .AddStateMachine(new Deadbolt(2).AddState<Unlocked>());
 
             Assert.IsTrue(door.Position is Closed);
         }
@@ -46,7 +46,7 @@ namespace StateMachineTests
         public void OpenAClosedDoor()
         {
             door.AddState<Closed>()
-                .AddStateMachine(new DoorLock(2).AddState<Unlocked>());
+                .AddStateMachine(new Deadbolt(2).AddState<Unlocked>());
 
             door.Open();
 
@@ -57,7 +57,7 @@ namespace StateMachineTests
         public void OpenALockedDoor()
         {
             door.AddState<Closed>()
-                .AddStateMachine(new DoorLock(2).AddState<Locked>());
+                .AddStateMachine(new Deadbolt(2).AddState<Locked>());
 
             door.Open();
 
@@ -68,7 +68,7 @@ namespace StateMachineTests
         public void CloseAnOpenDoor()
         {
             door.AddState<Open>()
-                .AddStateMachine(new DoorLock(2).AddState<Unlocked>());
+                .AddStateMachine(new Deadbolt(2).AddState<Unlocked>());
 
             door.Close();
 
@@ -79,7 +79,7 @@ namespace StateMachineTests
         public void CloseALockedOpenDoor()
         {
             door.AddState<Open>()
-                .AddStateMachine(new DoorLock(2).AddState<Locked>());
+                .AddStateMachine(new Deadbolt(2).AddState<Locked>());
 
             door.Close();
 
@@ -90,7 +90,7 @@ namespace StateMachineTests
         public void CloseAClosedDoor()
         {
             door.AddState<Closed>()
-                .AddStateMachine(new DoorLock(2).AddState<Unlocked>());
+                .AddStateMachine(new Deadbolt(2).AddState<Unlocked>());
 
             door.Close();
 
@@ -101,7 +101,7 @@ namespace StateMachineTests
         public void CloseAClosedLockedDoor()
         {
             door.AddState<Closed>()
-                .AddStateMachine(new DoorLock(2).AddState<Locked>());
+                .AddStateMachine(new Deadbolt(2).AddState<Locked>());
 
             door.Close();
 
@@ -112,7 +112,7 @@ namespace StateMachineTests
         public void OpenAnOpenedDoor()
         {
             door.AddState<Open>()
-                .AddStateMachine(new DoorLock(2).AddState<Unlocked>());
+                .AddStateMachine(new Deadbolt(2).AddState<Unlocked>());
 
             door.Open();
 
@@ -127,7 +127,7 @@ namespace StateMachineTests
         public void WalkThroughOpenDoor()
         {
             door.AddState<Open>()
-                .AddStateMachine(new DoorLock(2).AddState<Unlocked>());
+                .AddStateMachine(new Deadbolt(2).AddState<Unlocked>());
 
             door.WalkThrough();
         }
@@ -136,7 +136,7 @@ namespace StateMachineTests
         public void WalkThroughClosedDoor()
         {
             door.AddState<Closed>()
-                .AddStateMachine(new DoorLock(2).AddState<Unlocked>());
+                .AddStateMachine(new Deadbolt(2).AddState<Unlocked>());
 
             door.WalkThrough();
         }
@@ -145,7 +145,7 @@ namespace StateMachineTests
         public void WalkThroughClosedThenOpen()
         {
             door.AddState<Closed>()
-                .AddStateMachine(new DoorLock(2).AddState<Unlocked>());
+                .AddStateMachine(new Deadbolt(2).AddState<Unlocked>());
 
             door.WalkThrough();
 
@@ -158,7 +158,7 @@ namespace StateMachineTests
         public void WalkThroughOpenThenClosed()
         {
             door.AddState<Open>()
-                .AddStateMachine(new DoorLock(2).AddState<Unlocked>());
+                .AddStateMachine(new Deadbolt(2).AddState<Unlocked>());
 
             door.WalkThrough();
 

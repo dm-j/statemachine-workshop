@@ -14,8 +14,8 @@ namespace SM.WorkshopSM
             State<Position>().Single();
 
         // State Machines
-        public DoorLock Lock =>
-            Child<DoorLock>().Single();
+        public Deadbolt Lock =>
+            Child<Deadbolt>().Single();
 
         // Actions
         public void Open() =>
