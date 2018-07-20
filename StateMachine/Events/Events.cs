@@ -1,10 +1,11 @@
-﻿namespace StateMachine.WorkshopSM
+﻿namespace SM.WorkshopSM
 {
     public enum Event
     {
         // Your events go here.
         Close,
         Open,
-        DoorHasOpened
+        Lock,
+        Unlock
     }
 }

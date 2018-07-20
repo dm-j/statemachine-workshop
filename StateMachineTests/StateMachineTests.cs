@@ -1,5 +1,5 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
-using StateMachine.WorkshopSM;
+using SM.WorkshopSM;
 
 namespace StateMachineTests
 {
@@ -27,7 +27,8 @@ namespace StateMachineTests
         [TestMethod]
         public void DoorIsOpen()
         {
-            door.AddState<Open>();
+            door.AddState<Open>()
+                .AddStateMachine(new DoorLock(2).AddState<Unlocked>());
 
             Assert.IsTrue(door.Position is Open);
         }
@@ -35,7 +36,8 @@ namespace StateMachineTests
         [TestMethod]
         public void DoorIsClosed()
         {
-            door.AddState<Closed>();
+            door.AddState<Closed>()
+                .AddStateMachine(new DoorLock(2).AddState<Unlocked>());
 
             Assert.IsTrue(door.Position is Closed);
         }
@@ -43,7 +45,8 @@ namespace StateMachineTests
         [TestMethod]
         public void OpenAClosedDoor()
         {
-            door.AddState<Closed>();
+            door.AddState<Closed>()
+                .AddStateMachine(new DoorLock(2).AddState<Unlocked>());
 
             door.Open();
 
@@ -53,7 +56,8 @@ namespace StateMachineTests
         [TestMethod]
         public void CloseAnOpenDoor()
         {
-            door.AddState<Open>();
+            door.AddState<Open>()
+                .AddStateMachine(new DoorLock(2).AddState<Unlocked>());
 
             door.Close();
 
@@ -63,7 +67,8 @@ namespace StateMachineTests
         [TestMethod]
         public void CloseAClosedDoor()
         {
-            door.AddState<Closed>();
+            door.AddState<Closed>()
+                .AddStateMachine(new DoorLock(2).AddState<Unlocked>());
 
             door.Close();
 
@@ -73,7 +78,8 @@ namespace StateMachineTests
         [TestMethod]
         public void OpenAnOpenedDoor()
         {
-            door.AddState<Open>();
+            door.AddState<Open>()
+                .AddStateMachine(new DoorLock(2).AddState<Unlocked>());
 
             door.Open();
 
@@ -87,7 +93,8 @@ namespace StateMachineTests
         [TestMethod]
         public void WalkThroughOpenDoor()
         {
-            door.AddState<Open>();
+            door.AddState<Open>()
+                .AddStateMachine(new DoorLock(2).AddState<Unlocked>());
 
             door.WalkThrough();
         }
@@ -95,7 +102,8 @@ namespace StateMachineTests
         [TestMethod]
         public void WalkThroughClosedDoor()
         {
-            door.AddState<Closed>();
+            door.AddState<Closed>()
+                .AddStateMachine(new DoorLock(2).AddState<Unlocked>());
 
             door.WalkThrough();
         }
@@ -103,7 +111,8 @@ namespace StateMachineTests
         [TestMethod]
         public void WalkThroughClosedThenOpen()
         {
-            door.AddState<Closed>();
+            door.AddState<Closed>()
+                .AddStateMachine(new DoorLock(2).AddState<Unlocked>());
 
             door.WalkThrough();
 
@@ -115,7 +124,8 @@ namespace StateMachineTests
         [TestMethod]
         public void WalkThroughOpenThenClosed()
         {
-            door.AddState<Open>();
+            door.AddState<Open>()
+                .AddStateMachine(new DoorLock(2).AddState<Unlocked>());
 
             door.WalkThrough();
 
