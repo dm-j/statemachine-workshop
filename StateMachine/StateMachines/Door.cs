@@ -14,7 +14,7 @@ namespace SM.WorkshopSM
             State<Position>().Single();
 
         // State Machines
-        public Deadbolt Lock =>
+        public Deadbolt Deadbolt =>
             Child<Deadbolt>().Single();
 
         // Actions

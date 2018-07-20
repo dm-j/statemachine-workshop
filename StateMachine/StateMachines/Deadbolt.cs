@@ -8,8 +8,8 @@ namespace SM.WorkshopSM
         public Deadbolt(int ID)
             : base(ID) { }
 
-        public LockedState Locked =>
-            State<LockedState>().Single();
+        public DeadboltLockState Locked =>
+            State<DeadboltLockState>().Single();
 
         public Door Door => Parent<Door>();
 

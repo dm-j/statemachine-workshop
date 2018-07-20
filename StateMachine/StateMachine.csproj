@@ -46,7 +46,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="StateMachines\DoorLock.cs" />
+    <Compile Include="StateMachines\Deadbolt.cs" />
     <Compile Include="States\LockedState.cs" />
     <Compile Include="StateMachines\Door.cs" />
     <Compile Include="States\Position.cs" />
