@@ -35,7 +35,7 @@ namespace SM.WorkshopSM
         public Closed(Door door)
             : base(door)
         {
-            AddTransition<Open>(Event.Open, () => Door.Lock.IsLocked);
+            AddTransition<Open>(Event.Open, () => !Door.Lock.IsLocked);
         }
         
         internal override void WalkThrough() =>

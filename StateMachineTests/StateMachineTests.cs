@@ -54,6 +54,17 @@ namespace StateMachineTests
         }
 
         [TestMethod]
+        public void OpenALockedDoor()
+        {
+            door.AddState<Closed>()
+                .AddStateMachine(new DoorLock(2).AddState<Locked>());
+
+            door.Open();
+
+            Assert.IsTrue(door.Position is Closed);
+        }
+
+        [TestMethod]
         public void CloseAnOpenDoor()
         {
             door.AddState<Open>()
@@ -65,10 +76,32 @@ namespace StateMachineTests
         }
 
         [TestMethod]
+        public void CloseALockedOpenDoor()
+        {
+            door.AddState<Open>()
+                .AddStateMachine(new DoorLock(2).AddState<Locked>());
+
+            door.Close();
+
+            Assert.IsTrue(door.Position is Closed);
+        }
+
+        [TestMethod]
         public void CloseAClosedDoor()
         {
             door.AddState<Closed>()
                 .AddStateMachine(new DoorLock(2).AddState<Unlocked>());
+
+            door.Close();
+
+            Assert.IsTrue(door.Position is Closed);
+        }
+
+        [TestMethod]
+        public void CloseAClosedLockedDoor()
+        {
+            door.AddState<Closed>()
+                .AddStateMachine(new DoorLock(2).AddState<Locked>());
 
             door.Close();
 
